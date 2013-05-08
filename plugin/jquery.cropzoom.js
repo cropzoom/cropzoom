@@ -154,13 +154,13 @@
                                 : $options.selector.h)
                     });
 
-            if (navigator.userAgent.match(/msie/i)) { 
+            if (navigator.userAgent.match(/msie/i)) {
 
                 // Add VML includes and namespace
                 if (document.namespaces && !document.namespaces.v) {
-                _self[0].ownerDocument.namespaces
-                        .add('v', 'urn:schemas-microsoft-com:vml',
-                        "#default#VML");
+                    _self[0].ownerDocument.namespaces
+                            .add('v', 'urn:schemas-microsoft-com:vml',
+                            "#default#VML");
                 }
                 // Add required css rules
                 var style = document.createStyleSheet();
@@ -171,9 +171,11 @@
 
                 //Include the namespace on load of window for IE10
                 jQuery(window).load(function() {
-                    _self[0].ownerDocument.namespaces
-                            .add('v', 'urn:schemas-microsoft-com:vml',
-                            "#default#VML");
+                    if (document.namespaces && !document.namespaces.v) {
+                        _self[0].ownerDocument.namespaces
+                                .add('v', 'urn:schemas-microsoft-com:vml',
+                                "#default#VML");
+                    }
                 });
 
 
