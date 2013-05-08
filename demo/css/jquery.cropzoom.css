@@ -1,0 +1,36 @@
+#zoomMin.vertical,#zoomMax.vertical{color:#000;font:700 14px Arial;margin:auto;width:100%;text-align:center}
+#zoomSlider.vertical{margin: 7px auto;height: 150px;width:6px;position:relative}
+#zoomContainer.vertical{background-color:#FFF;z-index:3;width:31px;height: 200px}
+
+#rotationMin.vertical,#rotationMax.vertical{color:#000;font:700 14px Arial;margin:auto;width:100%;text-align:center}
+#rotationSlider.vertical{margin: 7px auto;height: 150px;width:6px;position:relative}
+#rotationContainer.vertical{background-color:#FFF;z-index:3;width:31px;height: 200px}
+/* Horizontal */
+#zoomMin.horizontal,#zoomMax.horizontal{color:#000;font:300 12px Arial;margin:2px 3px;padding:0 5px;float:left;text-align:center}
+#zoomSlider.horizontal{margin: 7px auto;height: 6px;width:300px;float:left;position:relative}
+#zoomContainer.horizontal{background-color:#FFF;z-index:3;width:auto;}
+
+#rotationMin.horizontal,#rotationMax.horizontal{color:#000;font:300 12px Arial;margin:2px 4px;float:left;text-align:center}
+#rotationSlider.horizontal{margin: 7px 5px;height: 6px;width:300px;float:left;position:relative}
+#rotationContainer.horizontal{background-color:#FFF;z-index:3;width:auto;}
+
+.mvn{background: url(../images/movement.png) no-repeat;width:21px;height:21px;}
+.mvn:hover{cursor:pointer;}
+.mvn_no{background-position:0px 0px;}
+.mvn_n{background-position:0px -21px;}
+.mvn_ne{background-position:0px -42px; }
+.mvn_o{background-position:0px -63px;}
+.mvn_c{/* See what put here */ }
+.mvn_e{background-position:0px -84px;}
+.mvn_so{background-position:0px -105px}
+.mvn_s{background-position:0px -126px;}
+.mvn_se{background-position:0px -147px;}
+.mvn_no:hover{background-position:100% 0px ;}
+.mvn_n:hover{background-position:100% -21px ;}
+.mvn_ne:hover{background-position:100% -42px;}
+.mvn_o:hover{background-position:100% -63px;}
+.mvn_c:hover{/* See what put here */ }
+.mvn_e:hover{background-position:100% -84px;}
+.mvn_so:hover{background-position:100% -105px;}
+.mvn_s:hover{background-position:100% -126px;}
+.mvn_se:hover{background-position:100% -147px;} 
