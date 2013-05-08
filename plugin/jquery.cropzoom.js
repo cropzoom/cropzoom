@@ -154,11 +154,20 @@
                                 : $options.selector.h)
                     });
 
-            if ($.browser.msie) {
+            if (navigator.userAgent.match(/msie/i)) { 
+
                 // Add VML includes and namespace
+                if (document.namespaces && !document.namespaces.v) {
                 _self[0].ownerDocument.namespaces
                         .add('v', 'urn:schemas-microsoft-com:vml',
                         "#default#VML");
+                }
+                // Add required css rules
+                var style = document.createStyleSheet();
+                style
+                        .addRule('v\\:image',
+                        "behavior: url(#default#VML);display:inline-block");
+                style.addRule('v\\:image', "antiAlias: false;");
 
                 //Include the namespace on load of window for IE10
                 jQuery(window).load(function() {
@@ -191,7 +200,7 @@
                     'height': getData('image').h
                 });
                 $image.setAttribute('coordsize', '21600,21600');
-                $image.outerHTML = $image.outerHTML;
+//                $image.outerHTML = $image.outerHTML;
 
                 var ext = getExtensionSource();
                 if (ext == 'png' || ext == 'gif')
@@ -374,7 +383,7 @@
                 $(function() {
                     adjustingSizesInRotation();
                     // console.log(imageData.id);
-                    if ($.browser.msie) {
+                    if (navigator.userAgent.match(/msie/i)) {
                         if ($.support.leadingWhitespace) {
                             rotacion = "rotate("
                                     + getData('image').rotation
@@ -527,7 +536,7 @@
                                 * Math.abs(value) / 100);
                         var zoomInPx_height = ($options.image.height
                                 * Math.abs(value) / 100);
-                        if ($.browser.msie) {
+                        if (navigator.userAgent.match(/msie/i)) {
                             $($image)
                                     .css(
                                     {
@@ -628,7 +637,7 @@
                             - (getData('selector').w / 2);
                 }
 
-                $selector = $('<div/>')
+                $selector = $('<div />')
                         .attr('id', _self[0].id + '_selector')
                         .css(
                         {
