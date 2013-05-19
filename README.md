@@ -6,6 +6,7 @@
 * Exposed control to move the image with more precision
 * Support for CSS styling for almost everything
 * With the server side file included in PHP and ASP.NET, soon will be Python and Java as well.
+* Support cropping with IMagick
 
 ###Compatibility
 **CropZoom** has tested well on the following browsers:
@@ -14,4 +15,4 @@
 * Safari 3+
 * Opera 9.5
 * Google Chrome
-* Internet Explorer 6+
+* Internet Explorer 9+ (Previous browser will no longer supported)
