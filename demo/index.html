@@ -9,10 +9,10 @@
 
    
     <script type="text/javascript" src="js/script.js"></script>
-    <link href="css/jquery-ui-1.7.2.custom.css" rel="Stylesheet" type="text/css" /> 
+    <link href="css/jquery-ui-1.10.3.custom.min.css" rel="Stylesheet" type="text/css" /> 
     <link href="css/jquery.cropzoom.css" rel="Stylesheet" type="text/css" /> 
-    <script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>
-    <script type="text/javascript" src="js/jquery-ui-1.8.14.custom.min.js"></script>
+    <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui-1.10.3.custom.min.js"></script>
     <script type="text/javascript" src="js/jquery.cropzoom.js"></script>
     <!--<script type="text/javascript" src="http://cropzoom.googlecode.com/svn/trunk/plugin/jquery.cropzoom.js"></script>-->
     <link rel="stylesheet" href="css/style.css" type="text/css" media="screen" />
@@ -50,7 +50,7 @@
         });
         cropzoom.setSelector(45,45,200,150,true);
         $('#crop').click(function(){ 
-            cropzoom.send('resize_and_crop.php','POST',{},function(rta){
+            cropzoom.send('resize_and_crop_imagick.php','POST',{},function(rta){
                 $('.result').find('img').remove();
                 var img = $('<img />').attr('src',rta);
                 $('.result').find('.txt').hide().end().append(img);
@@ -203,7 +203,7 @@
                                                     <a class="button" href="javascript:void(0)">Restore</a>
                                               </span>
                                         </div>
-                                        <div class="cleared"></div><a href="index2.html">See Example 2</a>
+                                        <div class="cleared"></div>
                         </div>
                         <script type="text/javascript"><!--
                 google_ad_client = "pub-1574243574266511";
