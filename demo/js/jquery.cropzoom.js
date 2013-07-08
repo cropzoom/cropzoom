@@ -708,6 +708,8 @@
                 }
                 ;
 
+                _self.makeOverlayPositions = makeOverlayPositions;
+
                 function hideOverlay() {
                     _self.find("#t").hide();
                     _self.find("#b").hide();
@@ -852,7 +854,11 @@
                     tMovement = setTimeout(function () {
                         moveImage(obj);
                     }, 100);
-                }
+                };
+
+                $.fn.cropzoom.updateOverlayPosition = function(ui){
+                    _self.makeOverlayPositions(ui);
+                };
 
                 $.fn.cropzoom.getParameters = function (_self, custom) {
                     var image = _self.data('image');
@@ -899,13 +905,29 @@
         setSelector: function (x, y, w, h, animate) {
 
             var _self = $(this);
+            _self.data('selector', {
+                x: x,
+                y: y,
+                w: w,
+                h: h
+            });
+            var ui_object = {
+                position : {
+                    top : y,
+                    left : x
+                }
+            };
             if (animate != undefined && animate == true) {
                 _self.find('#' + _self[0].id + '_selector').animate({
                     'top': y,
                     'left': x,
                     'width': w,
                     'height': h
-                }, 'slow');
+                }, 'slow', function(){
+                    if (_self.data('options').selector.startWithOverlay) {
+                        _self.cropzoom.updateOverlayPosition(ui_object);
+                    }
+                } );
             } else {
                 _self.find('#' + _self[0].id + '_selector').css({
                     'top': y,
@@ -913,14 +935,10 @@
                     'width': w,
                     'height': h
                 });
+                if ($(this).data('options').selector.startWithOverlay) {
+                   _self.cropzoom.updateOverlayPosition(ui_object);
+                }
             }
-
-            _self.data('selector', {
-                x: x,
-                y: y,
-                w: w,
-                h: h
-            });
 
         },
         // Restore the Plugin
