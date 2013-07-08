@@ -783,18 +783,23 @@
                     btns.push($('<div />').addClass('mvn_so mvn'));
                     btns.push($('<div />').addClass('mvn_s mvn'));
                     btns.push($('<div />').addClass('mvn_se mvn'));
-                    for (var i = 0; i < btns.length; i++) {
+					
+					for (var i = 0; i < btns.length; i++) {
+						// for each buttons that were created above,
+						// attach action listeners
                         btns[i].mousedown(function () {
                             moveImage(this);
                         }).mouseup(function () {
-                                clearTimeout(tMovement);
-                            }).mouseout(function () {
-                                clearTimeout(tMovement);
-                            });
+                            clearTimeout(tMovement);
+                        }).mouseout(function () {
+                            clearTimeout(tMovement);
+                        });
+						// find the correct position in the placeholder table and add them
                         table.find('td:eq(' + i + ')').append(btns[i]);
-                        $($options.expose.elementMovement).empty().append(table);
-
                     }
+					
+					// find the container in the view, empty it up and append the table
+					$($options.expose.elementMovement).empty().append(table);
                 }
                 ;
 
