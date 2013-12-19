@@ -157,7 +157,7 @@
 
                 var ext = getExtensionSource();
                 if (ext == 'png' || ext == 'gif')
-                    $image.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='"
+                    $image[0].style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='"
                         + $options.image.source
                         + "',sizingMethod='scale');";
 
