@@ -90,7 +90,7 @@
                 if ($options.image.source == ''
                     || $options.image.width == 0
                     || $options.image.height == 0) {
-                    alert('You must set the source, witdth and height of the image element');
+                    alert('You must set the source, width and height of the image element');
                     return;
                 }
 
