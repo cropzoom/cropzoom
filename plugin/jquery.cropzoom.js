@@ -561,10 +561,13 @@
                                         $selector,
                                         getData('selector'));
                             },
-                            stop: function (event, ui) {
-                                // hide overlay
+                            start: function (event, ui) {
                                 if ($options.selector.hideOverlayOnDragAndResize)
                                     hideOverlay();
+                            },
+                            stop: function (event, ui) {
+                                if ($options.selector.hideOverlayOnDragAndResize)
+                                    showOverlay();
                                 if ($options.selector.onSelectorDragStop != null)
                                     $options.selector
                                         .onSelectorDragStop(
@@ -593,9 +596,13 @@
                                         $selector,
                                         getData('selector'));
                             },
-                            stop: function (event, ui) {
+                            start: function (event, ui) {
                                 if ($options.selector.hideOverlayOnDragAndResize)
                                     hideOverlay();
+                            },
+                            stop: function (event, ui) {
+                                if ($options.selector.hideOverlayOnDragAndResize)
+                                    showOverlay();
                                 if ($options.selector.onSelectorResizeStop != null)
                                     $options.selector
                                         .onSelectorResizeStop(
@@ -670,9 +677,7 @@
                 ;
 
                 function makeOverlayPositions(ui) {
-
                     _self.find("#t").css({
-                        "display": "block",
                         "width": $options.width,
                         'height': ui.position.top,
                         'left': 0,
@@ -680,7 +685,6 @@
                     });
                     _self.find("#b").css(
                         {
-                            "display": "block",
                             "width": $options.width,
                             'height': $options.height,
                             'top': (ui.position.top + $selector
@@ -689,7 +693,6 @@
                             'left': 0
                         });
                     _self.find("#l").css({
-                        "display": "block",
                         'left': 0,
                         'top': ui.position.top,
                         'width': ui.position.left,
@@ -697,7 +700,6 @@
                     });
                     _self.find("#r").css(
                         {
-                            "display": "block",
                             'top': ui.position.top,
                             'left': (ui.position.left + $selector
                                 .width())
@@ -715,6 +717,13 @@
                     _self.find("#b").hide();
                     _self.find("#l").hide();
                     _self.find("#r").hide();
+                }
+
+                function showOverlay() {
+                    _self.find("#t").show();
+                    _self.find("#b").show();
+                    _self.find("#l").show();
+                    _self.find("#r").show();
                 }
 
                 function setData(key, data) {
