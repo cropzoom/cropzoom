@@ -106,6 +106,7 @@
                     'position': 'relative',
                     'border': '2px solid #333'
                 });
+                _self.addClass('cropzoom-container');
 
                 setData('image', {
                     h: $options.image.height,

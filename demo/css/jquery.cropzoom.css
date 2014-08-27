@@ -33,4 +33,6 @@
 .mvn_e:hover{background-position:100% -84px;}
 .mvn_so:hover{background-position:100% -105px;}
 .mvn_s:hover{background-position:100% -126px;}
-.mvn_se:hover{background-position:100% -147px;} 
+.mvn_se:hover{background-position:100% -147px;}
+
+.cropzoom-container,.cropzoom-container div{box-sizing: content-box;}
