@@ -686,26 +686,22 @@
                     _self.find("#b").css(
                         {
                             "width": $options.width,
-                            'height': $options.height,
-                            'top': (ui.position.top + $selector
-                                .height())
-                                + "px",
+                            'height': ($options.height - $selector.outerHeight()) + "px",
+                            'top': (ui.position.top + $selector.outerHeight()) + "px",
                             'left': 0
                         });
                     _self.find("#l").css({
                         'left': 0,
                         'top': ui.position.top,
                         'width': ui.position.left,
-                        'height': $selector.height()
+                        'height': $selector.outerHeight()
                     });
                     _self.find("#r").css(
                         {
                             'top': ui.position.top,
-                            'left': (ui.position.left + $selector
-                                .width())
-                                + "px",
-                            'width': $options.width,
-                            'height': $selector.height() + "px"
+                            'left': (ui.position.left + $selector.outerWidth()) + "px",
+                            'width': ($options.width - $selector.outerWidth()) + "px",
+                            'height': $selector.outerHeight() + "px"
                         });
                 }
                 ;
