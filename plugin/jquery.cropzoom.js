@@ -40,6 +40,8 @@
                         showDimetionsOnDrag: true,
                         maxHeight: null,
                         maxWidth: null,
+                        minHeight: null,
+                        minWidth: null,
                         startWithOverlay: false,
                         hideOverlayOnDragAndResize: true,
                         onSelectorDrag: null,
@@ -581,8 +583,8 @@
                             aspectRatio: $options.selector.aspectRatio,
                             maxHeight: $options.selector.maxHeight,
                             maxWidth: $options.selector.maxWidth,
-                            minHeight: $options.selector.h,
-                            minWidth: $options.selector.w,
+                            minHeight: $options.selector.minHeight,
+                            minWidth: $options.selector.minWidth,
                             containment: 'parent',
                             resize: function (event, ui) {
                                 // update ovelay position
