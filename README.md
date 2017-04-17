@@ -1,6 +1,6 @@
 **CropZoom** is a jQuery plugin to crop, zoom and rotate images.
 
-###Features
+### Features
 * Adding this simply to any place in your HTML page
 * Callbacks for selection done, while dragging, rotating and zooming.
 * Exposed control to move the image with more precision
@@ -8,7 +8,7 @@
 * With the server side file included in PHP and ASP.NET, soon will be Python and Java as well.
 * Support cropping with IMagick
 
-###Compatibility
+### Compatibility
 **CropZoom** has tested well on the following browsers:
 
 * Firefox 3+
